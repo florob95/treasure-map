@@ -1,0 +1,41 @@
+{
+  "name": "grpc-to-http",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "star:docker": "npm run build && docker build -t treasure-map-app ./ && docker run --rm treasure-map-app",
+    "start": "node ./build/index.js",
+    "start:watch": "node --watch-path=./build ./build/index.js",
+    "start:dev": "concurrently --prefixColors auto \"npm run start:watch\" \"npm run watch\"",
+    "build": "node build.js",
+    "watch": "node watch.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier ./src",
+    "format:fix": "prettier ./src --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.9.0",
+    "@vitest/coverage-v8": "^2.1.5",
+    "concurrently": "^9.0.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1",
+    "vitest": "^2.1.5"
+  }
+}
